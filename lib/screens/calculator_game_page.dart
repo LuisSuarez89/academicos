@@ -159,7 +159,7 @@ class _CalculatorGamePageState extends State<CalculatorGamePage> {
     return Scaffold(
       backgroundColor: const Color(0xFF10131E),
       appBar: AppBar(
-        title: const Text('Calculadora Científica Arcade'),
+        title: const Text('Calculadora'),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -174,7 +174,7 @@ class _CalculatorGamePageState extends State<CalculatorGamePage> {
                 combo: _combo,
                 energy: _energy,
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 8),
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(16),
@@ -187,14 +187,14 @@ class _CalculatorGamePageState extends State<CalculatorGamePage> {
                     children: <Widget>[
                       Text(
                         _expression.isEmpty ? 'Ingresa tu operación...' : _expression,
-                        style: const TextStyle(color: Colors.white54, fontSize: 18),
+                        style: const TextStyle(color: Colors.white54, fontSize: 12),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 8),
                       Text(
                         _display,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 36,
+                          fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

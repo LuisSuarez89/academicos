@@ -15,7 +15,7 @@ void main() {
 
     await tester.pumpWidget(const ArcadeCalculatorApp());
 
-    expect(find.text('Calculadora Científica Arcade'), findsOneWidget);
+    expect(find.text('Calculadora'), findsOneWidget);
     expect(find.text('Slime'), findsOneWidget);
     expect(find.text('='), findsOneWidget);
 
