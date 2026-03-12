@@ -198,38 +198,48 @@ class _CalculatorGamePageState extends State<CalculatorGamePage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Spacer(),
-                      GridView.builder(
-                        shrinkWrap: true,
-                        itemCount: _buttons.length,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4,
-                          mainAxisSpacing: 8,
-                          crossAxisSpacing: 8,
-                          childAspectRatio: 1.3,
-                        ),
-                        itemBuilder: (BuildContext context, int index) {
-                          final String label = _buttons[index];
-                          final bool isEqual = label == '=';
-                          final bool isOp = _isOperator(label);
-                          return FilledButton(
-                            style: FilledButton.styleFrom(
-                              backgroundColor: isEqual
-                                  ? Colors.green
-                                  : isOp
-                                      ? Colors.deepPurple
-                                      : const Color(0xFF2B3450),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
+                      Expanded(
+                        child: LayoutBuilder(
+                          builder: (context, constraints) {
+                            final double itemWidth = (constraints.maxWidth - 3 * 8.0) / 4;
+                            final double itemHeight = (constraints.maxHeight - 5 * 8.0) / 6;
+                            final double ratio = itemHeight > 0.0 ? (itemWidth / itemHeight) : 1.3;
+
+                            return GridView.builder(
+                              padding: EdgeInsets.zero,
+                              physics: const BouncingScrollPhysics(),
+                              itemCount: _buttons.length,
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 4,
+                                mainAxisSpacing: 8,
+                                crossAxisSpacing: 8,
+                                childAspectRatio: ratio.clamp(0.5, 2.5),
                               ),
-                            ),
-                            onPressed: () => _onTap(label),
-                            child: Text(
-                              label,
-                              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                            ),
-                          );
-                        },
+                              itemBuilder: (BuildContext context, int index) {
+                                final String label = _buttons[index];
+                                final bool isEqual = label == '=';
+                                final bool isOp = _isOperator(label);
+                                return FilledButton(
+                                  style: FilledButton.styleFrom(
+                                    backgroundColor: isEqual
+                                        ? Colors.green
+                                        : isOp
+                                            ? Colors.deepPurple
+                                            : const Color(0xFF2B3450),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(14),
+                                    ),
+                                  ),
+                                  onPressed: () => _onTap(label),
+                                  child: Text(
+                                    label,
+                                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),
