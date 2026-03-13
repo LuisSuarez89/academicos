@@ -2,7 +2,12 @@
     <application
         android:label="Numigo"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:largeHeap="true">
+        <!-- Disable Impeller to prevent WebView crashes on emulator -->
+        <meta-data
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
         <meta-data
     android:name="com.google.android.gms.ads.APPLICATION_ID"
     android:value="ca-app-pub-1049551382567997~2411302925"/>
