@@ -1,4 +1,4 @@
-package com.example.academicos_calculadora
+package com.zerausk.numigo
 
 import io.flutter.embedding.android.FlutterActivity
 

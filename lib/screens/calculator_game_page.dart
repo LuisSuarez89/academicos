@@ -2,8 +2,8 @@ import 'dart:io';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:academicos_calculadora/widgets/game_banner.dart';
-import 'package:academicos_calculadora/utils/expression_evaluator.dart';
+import 'package:numigo/widgets/game_banner.dart';
+import 'package:numigo/utils/expression_evaluator.dart';
 
 class CalculatorGamePage extends StatefulWidget {
   const CalculatorGamePage({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:academicos_calculadora/screens/calculator_game_page.dart';
+import 'package:numigo/screens/calculator_game_page.dart';
 
 class ArcadeCalculatorApp extends StatelessWidget {
   const ArcadeCalculatorApp({super.key});

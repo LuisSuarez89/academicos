@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:academicos_calculadora/app.dart';
-import 'package:academicos_calculadora/utils/expression_evaluator.dart';
+import 'package:numigo/app.dart';
+import 'package:numigo/utils/expression_evaluator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

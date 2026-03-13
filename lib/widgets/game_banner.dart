@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:academicos_calculadora/widgets/character_column.dart';
+import 'package:numigo/widgets/character_column.dart';
 
 class GameBanner extends StatelessWidget {
   const GameBanner({

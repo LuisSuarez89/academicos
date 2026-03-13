@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:academicos_calculadora/app.dart';
+import 'package:numigo/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
